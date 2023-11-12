@@ -1,0 +1,56 @@
+div.signup{
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.398);
+  padding-block: 5rem;
+  border: 1px solid white;
+  padding-inline: 1rem;
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+}
+div.signup h1{
+  text-align: center;
+  color: white;
+}
+
+ div.signup form {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  
+ div.signup  label {
+    margin: 8px;
+  }
+  
+ div.signup  input {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-inline: 1rem;
+    outline: none;
+  }
+   
+  div.signup button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .2s all;
+    border: 1px solid transparent;
+    background-color: rgb(51, 165, 26);
+  }
+   
+  div.signup button[type="button"] {
+    margin-top: .2rem;
+    background-color: #007bff;
+  }
+  
+  div.signup button:hover {
+    background-color: #0f0f0f;
+    border: 1px solid white;
+  }
+  
