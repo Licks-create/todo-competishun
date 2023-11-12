@@ -80,8 +80,8 @@ ul.todo-list {
   text-align: left;
   text-align: center;
 }
-.todo-list tbody td{
-  padding: 0px 10px;
+.todo-list tbody tr td{
+  padding: 0px 10px ;
 }
 .todo-list th {
   background-color: #4caf50;
