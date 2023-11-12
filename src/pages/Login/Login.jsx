@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "./Login.css";
 import { Navigate, Outlet, redirect, useNavigate } from "react-router-dom";
+import LoginIcon from '@mui/icons-material/Login';
 import toast from "react-hot-toast";
 const Login = () => {
   const navigate = useNavigate();
@@ -69,7 +70,7 @@ const Login = () => {
   return !success ? (
     <div className="login">
       
-      <h1 style={{color:"rgb(228, 243, 12)",textShadow:"1px 1px 2px currentColor"}}>SING IN</h1>
+      <h1 style={{color:"rgb(228, 243, 12)",textShadow:"1px 1px 2px currentColor"}}>SIGN IN</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Username:
@@ -85,7 +86,12 @@ const Login = () => {
           />
         </label>
         <br />
-        <button type="submit">Log In</button>
+        <button type="submit" >
+          <span>
+          Log In
+          </span>
+        <LoginIcon  style={{fontSize:"15px"}}/>
+        </button>
         <div style={{display:"flex",alignItems:"baseline",justifyContent:"space-evenly",width:"80%",margin:".4rem auto"}}>
         <span> Don&#39;t Have Account? </span>
       <button type="button" onClick={()=>{navigate("/")}}>Sign up</button>

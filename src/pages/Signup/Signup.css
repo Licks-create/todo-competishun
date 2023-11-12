@@ -1,4 +1,7 @@
 div.signup{
+  max-width: 444px;
+  margin: auto;
+  text-align: center;
   backdrop-filter: blur(3px);
   background-color: rgba(0, 0, 0, 0.398);
   padding-block: 5rem;

@@ -9,6 +9,10 @@ div.login{
   border-radius: 12px;
   position: relative;
   z-index: 2;
+  
+  max-width: 444px;
+  margin: auto;
+  text-align: center;
 }
 div.login h1{
   text-align: center;
@@ -47,6 +51,14 @@ div.login h1{
   div.login button[type="button"] {
     margin-top: .2rem;
     background-color: #007bff;
+  }
+  div.login button[type="submit"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  div.login button[type="submit"] span{
+    margin-inline: .5rem;
   }
   div.login button:hover {
     border: 1px solid white;

@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import "./Signup.css"
+import LoginIcon from '@mui/icons-material/Login';
 import {useNavigate} from "react-router-dom"
 import toast from 'react-hot-toast';
 
@@ -45,7 +46,7 @@ const Signup = () => {
 
 return (
     <div className='signup'>
-      <h1>SING UP</h1>
+      <h1>SIGN UP</h1>
       <form onSubmit={handleSubmit}>
       <label>
         Username:
@@ -57,10 +58,18 @@ return (
         <input type="password" value={password} onChange={handlePasswordChange} />
       </label>
       <br />
-      <button type="submit">Sign Up</button>
+      <button type="submit">Sign Up
+      
+      </button>
         <div style={{display:"flex",alignItems:"baseline",justifyContent:"space-evenly",width:"60%",margin:".4rem auto"}}>
         <span>Already Have? </span>
-      <button type="button" onClick={()=>{navigate("/login")}}>Login</button>
+      <button type="button" onClick={()=>{navigate("/login")}} style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <span>
+        Login
+        </span>
+      <LoginIcon style={{fontSize:"15px",marginLeft:"1rem"}}/>
+      
+      </button>
         </div>
     </form>
 
