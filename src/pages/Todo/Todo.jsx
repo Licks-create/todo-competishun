@@ -49,7 +49,7 @@ const Todo = () => {
       toast.success("task added succesfully");
 
       data = updatedData;
-      console.log({ data });
+      // console.log({ data });
       localStorage.setItem("user", JSON.stringify(data));
       setNewTask("");
     } else {
@@ -66,6 +66,7 @@ const Todo = () => {
   };
 
   const completeTask = (id) => {
+
     setTodos((prevTodos) =>
       prevTodos.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
@@ -76,7 +77,14 @@ const Todo = () => {
     const activePerson = data?.find((x) => x.isactive);
 
     let task = activePerson.task.map((task) => {
-      if (task.id === id) return { ...task, completed: true };
+
+
+      if (task.id === id) {
+        if(!task.completed)        
+        return { ...task, completed: true };
+        else
+        return { ...task, completed: !task.completed };
+      }
       return task;
     });
     let updatedData = data.map((obj) => {
@@ -84,13 +92,13 @@ const Todo = () => {
       return obj;
     });
     data = updatedData;
-    console.log({ data });
+    // console.log({ data });
     localStorage.setItem("user", JSON.stringify(data));
   };
 
   const deleteTask = (id) => {
     const allowDelete = confirm("Are you sure to delete?");
-    console.log({ allowDelete });
+    // console.log({ allowDelete });
     if (!allowDelete) return toast.success("Not Deleted");
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
 
@@ -106,7 +114,7 @@ const Todo = () => {
       return obj;
     });
     data = updatedData;
-    console.log({ data });
+    // console.log({ data });
     toast.success("Successfully Deleted");
     localStorage.setItem("user", JSON.stringify(data));
   };
@@ -212,7 +220,7 @@ const Todo = () => {
                         <input
                           type="checkbox"
                           checked={todo.completed}
-                          onClick={() => completeTask(todo.id)}
+                          onChange={() => completeTask(todo.id)}
                         />
                       </td>
                       <td
