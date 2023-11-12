@@ -33,7 +33,7 @@ To run the Competishun Todo List App locally, follow these steps:
 
    ```bash
    git clone https://github.com/your-username/competishun-todo-app.git
-   cd competishun-todo-app
+   cd todo-competishun
 
 
 # React + Vite
