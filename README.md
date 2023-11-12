@@ -1,4 +1,4 @@
-# Competishun Todo List App
+# Competishun Todo List App (Using LocalStorage)
 
 ## Table of Contents
 
