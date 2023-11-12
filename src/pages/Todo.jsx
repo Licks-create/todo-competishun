@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import './Todo.css';
+import toast from 'react-hot-toast';
 
 const Todo = () => {
   const [todos, setTodos] = useState([]);
@@ -32,7 +33,7 @@ const Todo = () => {
           if (obj.username === activePerson.username) return { ...obj, isactive: true ,task};
           return obj;
       });
-      alert("task added succesfully")
+      toast.success("task added succesfully")
 
       data=updatedData
       console.log({data})
@@ -41,7 +42,7 @@ const Todo = () => {
     }
 
     else{
-        alert("task cannot be empty")
+        toast.error("task cannot be empty")
     }
   };
 
@@ -80,7 +81,7 @@ const Todo = () => {
     const allowDelete=confirm("Are you sure to delete?");
     console.log({allowDelete})
     if(!allowDelete)
-    return alert("Not Deleted")
+    return toast.success("Not Deleted")
     setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
 
     let data=JSON.parse(localStorage.getItem("user"))
@@ -98,7 +99,7 @@ const Todo = () => {
       })
       data=updatedData;
       console.log({data})
-      alert("Successfully Deleted")
+      toast.success("Successfully Deleted")
       localStorage.setItem("user",JSON.stringify(data))
   };
 

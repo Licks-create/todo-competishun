@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import "./Signup.css"
 import {useNavigate} from "react-router-dom"
+import toast from 'react-hot-toast';
 
 const Signup = () => {
 
@@ -22,13 +23,13 @@ const Signup = () => {
     };
 
     const onSignUp=({ username, password })=>{
-      if(username==="")return alert("Enter Valid username")
-      if(password==="")return alert("Enter Valid Password")
+      if(username==="")return toast.error("Enter Valid username")
+      if(password==="")return toast.error("Enter Valid Password")
       const data=JSON.parse(localStorage.getItem("user"))
       if(data){
         const usernameMatched=data.find(x=>x.username===username)
         if(usernameMatched){
-          alert("username already present")
+          toast.error("username already present")
           navigate("/login")
           return
        }
@@ -38,7 +39,7 @@ const Signup = () => {
       else{
         localStorage.setItem("user",JSON.stringify([{username,password}])) 
       }
-      alert("registered")
+      toast.success("registered")
       navigate("/login")
     }
 

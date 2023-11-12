@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import {useNavigate,Outlet, Link} from "react-router-dom"
 import "./Home.css"
+import toast from 'react-hot-toast';
 const Home = () => {
   const navigate=useNavigate()
   let data=JSON.parse(localStorage.getItem("user"))
@@ -12,7 +13,7 @@ const Home = () => {
     localStorage.setItem("user",JSON.stringify(data))
     navigate("/login")
     window.location.reload(true)
-    alert("Logged out")
+    toast.success("Logged out")
   }
   return (
     <main className='home'>

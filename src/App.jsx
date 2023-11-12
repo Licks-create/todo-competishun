@@ -5,10 +5,14 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Todo from './pages/Todo'
+import {Toaster} from "react-hot-toast"
 function App() {
 
   return (
     <>
+    <Toaster position='top-center'>
+
+    </Toaster>
     
     <BrowserRouter>
       <Routes>

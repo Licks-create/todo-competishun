@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import "./Login.css";
 import { Navigate, Outlet, redirect, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 const Login = () => {
   const navigate = useNavigate();
 
@@ -30,29 +31,29 @@ const Login = () => {
   };
 
   const onLogin = ({ username, password }) => {
-      if(username==="")return alert("Enter Valid username")
-      if(password==="")return alert("Enter Valid Password")
+      if(username==="")return toast.error("Enter Valid username")
+      if(password==="")return toast.error("Enter Valid Password")
     let data = JSON.parse(localStorage.getItem("user"));
 
     if (!data) {
-      alert("User Not Found!");
+      toast.error("User Not Found!");
       navigate("/");
       return;
     }
 
     const usernameMatched = data.find((x) => x.username === username);
     if (!usernameMatched) {
-      alert("usernmae does not exist!");
+      toast.error("usernmae does not exist!");
       return;
     }
     const userpassMatched = data.find(
       (x) => x.username === username && x.password === password
     );
     if (!userpassMatched) {
-      alert("wrong password!");
+      toast.error("wrong password!");
       return;
     }
-    alert("Logged in")
+    toast.success("Logged in")
     const updatedData = data.map((obj) => {
       if (obj.username === username) return { ...obj, isactive: true };
       return obj;
