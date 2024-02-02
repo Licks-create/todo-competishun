@@ -1,5 +1,5 @@
-# todo-competishun
-# Competishun Todo List Project
+# todo-app
+# Muti Functional Todo List Project
 
 ## Overview
 
