@@ -132,7 +132,7 @@ const Todo = () => {
     <div className="todo-app">
       <div>
 
-      <h1>Todo App - Competishun</h1>
+      <h1>Todo App by Vivekanand </h1>
       <div className="todo-form">
         <label style={{ marginInline: ".2rem" }}>
           Task Name
